@@ -1,0 +1,3 @@
+const SHOW_BTN_CLICKED = 'SHOW_BTN_CLICKED';
+
+export default SHOW_BTN_CLICKED
