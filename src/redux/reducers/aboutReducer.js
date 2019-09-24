@@ -1,7 +1,7 @@
 import SHOW_BTN_CLICKED from "../actions/types";
 
 const initialState = {
-    show: true
+    show: false
 };
 
 const aboutReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const aboutReducer = (state = initialState, action) => {
         case SHOW_BTN_CLICKED:
             return {
                 ...state,
-                show: false
+                show: state.show === false
             };
         default:
             return state;
