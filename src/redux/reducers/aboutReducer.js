@@ -1,4 +1,4 @@
-import SHOW_BTN_CLICKED from "../actions/types";
+import {SHOW_BTN_CLICKED} from "../actions/types";
 
 const initialState = {
     show: false

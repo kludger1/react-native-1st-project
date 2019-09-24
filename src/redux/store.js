@@ -2,9 +2,11 @@ import React from "react"
 import { createStore, combineReducers } from 'redux'
 
 import aboutReducer from "./reducers/aboutReducer";
+import authReducer from "./reducers/authReducer";
 
 const rootReducer = combineReducers({
-    about: aboutReducer
+    about: aboutReducer,
+    userStatus: authReducer
 });
 
 const configureStore = () => {

@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import About from "./components/About/About";
 import Msg from "./components/Utilities/Msg";
 import Home from "./components/Home/Home";
+import LogoutPage from "./components/Logout/Logout";
 import {Topics, Topic} from "./components/Topics/Topics";
 import Nav from "./components/Navigation/Nav"
 import Images from "./components/Images/Images"
@@ -25,8 +26,10 @@ const App = () => {
     return (
         <NativeRouter>
             <View style={styles.container}>
+
+                <Route exact path="/" component={LogoutPage} />
                 <Nav/>
-                <Route exact path="/" component={Home} />
+                <Route path="/home" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/topics" component={Topics} />
                 <Route path="/images" component={Images} />
@@ -35,21 +38,5 @@ const App = () => {
     );
 };
 
-// const mapStateToProps = state => {
-//     return {
-//         show: state.show,
-//         btnTitle: state.btnTitle
-//     }
-// };
-//
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         add: (name) => {
-//             dispatch(addPlace(name))
-//         }
-//     }
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 export default App

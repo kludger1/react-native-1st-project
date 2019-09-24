@@ -6,7 +6,7 @@ import {Link} from "react-router-native";
 const Nav = () => {
     return(
         <View style={styles.nav}>
-            <Link to="/" underlayColor="#f0f4f7" style={styles.navItem}>
+            <Link to="/home" underlayColor="#f0f4f7" style={styles.navItem}>
                 <Text>Home</Text>
             </Link>
             <Link to="/about" underlayColor="#f0f4f7" style={styles.navItem}>
@@ -14,6 +14,9 @@ const Nav = () => {
             </Link>
             <Link to="/topics" underlayColor="#f0f4f7" style={styles.navItem}>
                 <Text>Topics</Text>
+            </Link>
+            <Link to="/" underlayColor="#f0f4f7" style={styles.navItem}>
+                <Text>Logout</Text>
             </Link>
         </View>
     )

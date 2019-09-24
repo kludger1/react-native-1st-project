@@ -3,7 +3,7 @@ import {Text, View} from "react-native";
 
 import styles from "../../styles/StyleSheet";
 
-const Msg = ({msg, name}) => {
+const Msg = ({msg, name=""}) => {
     return (
         <Fragment>
             <View>

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         paddingBottom:10
     },
     link__background: {
-        backgroundColor: '#D4E3F6',
+        backgroundColor: '#5499E7',
         padding: 10
     },
     nav: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     navItem__blue: {
-        color: "#103B6E"
+        color: "#042348"
     },
     subNavItem: {
         padding: 5
@@ -42,6 +42,21 @@ const styles = StyleSheet.create({
     },
     mt_10: {
         marginTop: 10
+    },
+    text_Input: {
+        backgroundColor: "#EDEDED",
+        marginTop: 30,
+        marginBottom: 20,
+        borderBottomColor: "#5499E7",
+        borderBottomWidth: 2,
+        padding: 10,
+        width: "80%"
+
+    },
+    center: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     }
 });
 
