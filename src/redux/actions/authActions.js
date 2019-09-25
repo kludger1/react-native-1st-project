@@ -5,7 +5,7 @@ const loginUser = (name) => {
     return {
         type: LOGIN,
         payload: {
-            name
+           name: name
         }
 
     }

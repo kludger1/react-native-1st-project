@@ -2,17 +2,27 @@ import React, {Fragment, useState} from "react";
 import {TextInput, Text, View, Button} from "react-native";
 import Msg from "../Utilities/Msg";
 
+// import Home from "../Home/Home";
+
 import styles from "../../styles/StyleSheet";
-import {Link} from "react-router-native";
+import {Link, Redirect} from "react-router-native";
 import {loginUser, logOutUser} from "../../redux/actions/authActions";
 import {connect} from "react-redux";
 
-const LogoutPage = ({auth, name,login, logOut}) => {
+const LogoutPage = ({authentication, name,login, logOut}) => {
 
     const [value, setValue] = useState(name);
+    const [auth, setAuth] = useState(authentication);
+
     const handleSubmit = () => {
-        console.log(value)
+        if(value === '') return;
+        login(value);
+        setAuth(true)
+
     };
+    if(auth) {
+        return <Redirect to="/home" />
+    }
 
     return (
         <Fragment>
@@ -23,7 +33,7 @@ const LogoutPage = ({auth, name,login, logOut}) => {
                     style={styles.text_Input}
                     onChangeText={text => setValue(text)}
                     value={value}
-                    onSubmitEditing={handleSubmit}
+                    // onSubmitEditing={handleSubmit}
                 />
                 <Link to="/home" underlayColor="#f0f4f7" style={styles.mt_10}>
                     <Button title={'Login'} onPress={handleSubmit}/>
@@ -38,14 +48,14 @@ const LogoutPage = ({auth, name,login, logOut}) => {
 const mapStateToProps = state => {
     console.log(state);
     return {
-        auth: state.userStatus.logout,
+        authentication: state.userStatus.logout,
         name: state.userStatus.name
     }
 };
 
-const mapDispatchToProps = (dispatch, name) => {
+const mapDispatchToProps = dispatch => {
     return {
-        login: () => dispatch(loginUser(name)),
+        login: (name) => dispatch(loginUser(name)),
         logOut: () => dispatch(logOutUser())
 
     }

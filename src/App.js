@@ -28,7 +28,7 @@ const App = ({auth}) => {
         <NativeRouter>
             <View style={styles.container}>
 
-                <Route exact path="/" component={LogoutPage}/>
+                {auth ? <Route exact path="/" component={LogoutPage}/> : null}
 
                 <Nav/>
                 <Route path="/home" component={Home} />
