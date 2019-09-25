@@ -1,6 +1,7 @@
 import {LOGIN, LOGOUT} from "./types"
 
 const loginUser = (name) => {
+    console.log('from auth action',name);
     return {
         type: LOGIN,
         payload: {
@@ -10,7 +11,7 @@ const loginUser = (name) => {
     }
 };
 
-const loginOut = () => {
+const logOutUser = () => {
     return {
         type: LOGOUT,
         payload: {
@@ -20,4 +21,4 @@ const loginOut = () => {
     }
 };
 
-export {loginUser, loginOut}
+export {loginUser, logOutUser}

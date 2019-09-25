@@ -7,7 +7,6 @@
  */
 
 import React, {Fragment, useState} from "react";
-import { StyleSheet, Text, View, Image, Button} from "react-native";
 import { NativeRouter, Route, Link } from "react-router-native";
 import { connect } from 'react-redux';
 
@@ -19,15 +18,18 @@ import {Topics, Topic} from "./components/Topics/Topics";
 import Nav from "./components/Navigation/Nav"
 import Images from "./components/Images/Images"
 
+import {TextInput, Text, View, Button} from "react-native";
 import styles from "./styles/StyleSheet";
+import {loginUser, logOutUser} from "./redux/actions/authActions";
 
 
-const App = () => {
+const App = ({auth}) => {
     return (
         <NativeRouter>
             <View style={styles.container}>
 
-                <Route exact path="/" component={LogoutPage} />
+                <Route exact path="/" component={LogoutPage}/>
+
                 <Nav/>
                 <Route path="/home" component={Home} />
                 <Route path="/about" component={About} />
@@ -35,8 +37,17 @@ const App = () => {
                 <Route path="/images" component={Images} />
             </View>
         </NativeRouter>
+
     );
 };
 
 
-export default App
+const mapStateToProps = state => {
+    return {
+        auth: state.userStatus.logout
+    }
+};
+
+
+
+export default connect(mapStateToProps)(App)
