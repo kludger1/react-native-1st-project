@@ -3,6 +3,7 @@ import {Image, View} from "react-native";
 import Msg from "../Utilities/Msg";
 
 import styles from "../../styles/StyleSheet";
+import Nav from "../Navigation/Nav"
 
 const Home = () => {
     const pic = {
@@ -11,6 +12,7 @@ const Home = () => {
 
     return (
         <Fragment>
+            <Nav/>
             <View style={styles.mainView}>
                 <Image source={pic} style={{ alignSelf: 'stretch', height: 220, marginBottom: 20}}/>
                 <Msg msg='The owner is' name='Katleen'/>

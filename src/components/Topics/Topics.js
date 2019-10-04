@@ -2,6 +2,7 @@ import React from "react"
 import {Text, View} from "react-native";
 import styles from "../../styles/StyleSheet";
 import {Route, Link } from "react-router-native"
+import Nav from "../Navigation/Nav";
 
 const Topic = ({ match }) => {
     return <Text style={styles.topic}>{match.params.topicId} topic...</Text>;
@@ -10,6 +11,7 @@ const Topic = ({ match }) => {
 const Topics = ({ match }) => {
     return (
         <View>
+            <Nav/>
             <Text style={styles.header}>Topics</Text>
             <View>
                 <Link

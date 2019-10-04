@@ -15,7 +15,6 @@ import Msg from "./components/Utilities/Msg";
 import Home from "./components/Home/Home";
 import LogoutPage from "./components/Logout/Logout";
 import {Topics, Topic} from "./components/Topics/Topics";
-import Nav from "./components/Navigation/Nav"
 import Images from "./components/Images/Images"
 
 import {TextInput, Text, View, Button} from "react-native";
@@ -23,22 +22,21 @@ import styles from "./styles/StyleSheet";
 import {loginUser, logOutUser} from "./redux/actions/authActions";
 
 
+
+
+
 const App = ({auth}) => {
-    return (
+    return(
         <NativeRouter>
             <View style={styles.container}>
-
-                {auth ? <Route exact path="/" component={LogoutPage}/> : null}
-
-                <Nav/>
+                {!auth && <Route exact path="/" component={LogoutPage}/>}
                 <Route path="/home" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/topics" component={Topics} />
                 <Route path="/images" component={Images} />
             </View>
         </NativeRouter>
-
-    );
+    )
 };
 
 
