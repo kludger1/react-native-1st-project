@@ -11,8 +11,7 @@ import Nav from "../Navigation/Nav";
 
 
 
-const  About = ({show, showToggle}) => {
-    const name = 'Katleen';
+const  About = ({show, showToggle, name}) => {
     const title = `See Images made by ${name}`;
 
     return (
@@ -37,7 +36,8 @@ const  About = ({show, showToggle}) => {
 
 const mapStateToProps = state => {
     return {
-        show: state.about.show
+        show: state.about.show,
+        name: state.userStatus.name
     }
 };
 
